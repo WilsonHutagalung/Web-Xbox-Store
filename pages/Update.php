@@ -14,6 +14,8 @@
         $harga = $_POST['harga_xbox'];
         $stok = $_POST['stok_xbox'];
         $desc = $_POST['spec_xbox'];
+        $role = isset($_POST['role']) ? $_POST['role'] : array();
+        $roleStr = is_array($role) ? implode(",", $role) : $role;
         $gambar = $_FILES['file']['name'];
         $temp_file = $_FILES['file']['tmp_name'];
         $extension = pathinfo($gambar, PATHINFO_EXTENSION);
@@ -22,7 +24,7 @@
         move_uploaded_file($temp_file, "../assets/images/img/".$nama_file); 
 
         $result = mysqli_query($conn, "UPDATE xbox SET nama='$nama', harga='$harga', 
-                                        stok='$stok', spesifikasi='$desc', gambar='$nama_file' WHERE id = $id");
+                                        stok='$stok', spesifikasi='$desc', role='$roleStr', gambar='$nama_file' WHERE id = $id");
 
         if ($result) {
             echo "
@@ -68,6 +70,10 @@
             </div>
             <div class="input-box">
                 <input type="text" name="spec_xbox" placeholder="Spesifikasi" required>
+            </div>
+            <div>
+                <input type="radio" name="role" value="console" required>Console 
+                <input type="radio" name="role" value="accessoris" required>Accessoris
             </div>
             <div class="input-box">
             <p><input type="file" name="file" required></p>

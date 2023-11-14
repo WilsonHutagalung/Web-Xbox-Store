@@ -4,7 +4,11 @@
     $get = mysqli_query($conn, "DELETE FROM xbox WHERE id = $id");
 
     if ($get) {
-        header('location: Dashboard.php');
+        echo "
+        <script>
+            alert('Data Berhasil dihapus!');
+            document.location.href = 'Dashboard.php';
+        </script>";
     } else {
         echo "
         <script>

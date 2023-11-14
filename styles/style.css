@@ -3,7 +3,7 @@
 
 body{
 	margin:0;
-	font-family: sans-serif;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	overflow-x: hidden;
 }
 
@@ -183,7 +183,7 @@ body{
 }
 
 .images {
-    font-family: Arial, Helvetica, sans-serif;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     padding: 4px 0 8px;;
 }
 

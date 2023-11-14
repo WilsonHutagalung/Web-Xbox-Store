@@ -102,6 +102,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                     <th>Harga Xbox</th>
                     <th>Stok Xbox</th>
                     <th>Spec Xbox</th>
+                    <th>Jenis Barang</th>
                     <th>Path Gambar</th>
                     <th>Action</th>
                 </tr>
@@ -115,6 +116,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <td><?php echo $console["harga"] ?></td>
                         <td><?php echo $console["stok"] ?></td>
                         <td><?php echo $console["spesifikasi"] ?></td>
+                        <td><?php echo $console["role"] ?></td>
                         <td><?php echo $console["gambar"] ?></td>
                         <td>
                         <!--  -->
