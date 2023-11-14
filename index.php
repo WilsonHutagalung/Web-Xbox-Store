@@ -107,11 +107,11 @@ if (isset($_SESSION['username'])) {
             </div>
             <div class="dropdown-menus">
               <div class="dropdown" id="games">
-                <p class="underline-hidden" class="dropdown-text">My Box</p>
+                <p class="underline-hidden" class="dropdown-text">Home</p>
                 <img src="./assets/images/header/more.png" />
               </div>
               <div class="dropdown" id="devices">
-                <p class="underline-hidden" class="dropdown-text">Devices</p>
+                <p class="underline-hidden" class="dropdown-text">My Box</p>
                 <img src="./assets/images/header/more.png" />
               </div>
               <div class="dropdown" id="community">
@@ -120,10 +120,10 @@ if (isset($_SESSION['username'])) {
                 </p>
                 <img src="./assets/images/header/more.png" />
               </div>
-              <!-- <div class="dropdown" id="my-xbox">
-                <p class="underline-hidden" class="dropdown-text">My Xbox</p>
-                <img src="./images/header/more.png" />
-              </div> -->
+              <div class="dropdown" id="my-xbox">
+                <p class="underline-hidden" class="dropdown-text">Devices</p>
+                <img src="./assets/images/header/more.png" />
+              </div>
               <div class="dropdown" id="xbox-support">
                 <p class="underline-hidden" class="dropdown-text">
                   Xbox Support
