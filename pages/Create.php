@@ -10,6 +10,10 @@ if (isset($_POST['tambah'])) {
     $harga = $_POST['harga_xbox'];
     $stok = $_POST['stok_xbox'];
     $desc = $_POST['spec_xbox'];
+    // Ngecek apakah udah dicheck atau belum, kalau belum jadi arr kosong
+    $role = isset($_POST['role']) ? $_POST['role'] : array();
+    // Ngecek apakah array atau bukan, kalau iya jadiin string dengan pemisah koma
+    $roleStr = is_array($role) ? implode(",", $role) : $role;
     $img = $_FILES["file"]["name"];
     $tempName = $_FILES["file"]["tmp_name"];
 
@@ -25,7 +29,7 @@ if (isset($_POST['tambah'])) {
 
     // move_uploaded_file($tempName, "image/" . $img);
     
-    $query = "INSERT INTO xbox VALUES ('','$nama', '$stok', '$harga','$desc','$new_foto')";
+    $query = "INSERT INTO xbox VALUES ('','$nama', '$stok', '$harga','$desc','$roleStr','$new_foto')";
     if (mysqli_query($conn, $query)) {
         echo "
         <script>
@@ -49,10 +53,10 @@ if (isset($_POST['tambah'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah</title>
-    <link rel="stylesheet" href="../styles/CRUD.css">
+    <link rel="stylesheet" href="../styles/Form.css">
 </head>
 <body>
-    <section class="add-data">
+    <!-- <section class="add-data">
         <div class="add-form-container">
             <h1>Tambah Data</h1><hr><br>
             <form action="" method="POST" name="tambah" enctype="multipart/form-data">
@@ -64,11 +68,47 @@ if (isset($_POST['tambah'])) {
                 <input type="number" name="stok_xbox" class="textfield" required>
                 <label for="Spesifikasi">Spesifikasi</label>
                 <input type="text" name="spec_xbox" class="textfield" required>
-                <!-- BIKIN UNTUKINPUTAN FILE -->
+                <label for="kategori">Kategori</label>
+                <div>
+                    <input type="radio" name="role" value="console" required>Console
+                    <input type="radio" name="role" value="accessoris" required>Accessoris
+                </div>
+
                 <p>add image : <input type="file" name="file" required> </p>
                 <input type="submit" name="tambah" name="spn" value="Tambah Data" class="login-btn">
             </form>
         </div>
-    </section>
+    </section> -->
+    <?php echo isset($row); ?>
+    <div class="wrapper">
+        <?php
+        if(isset($error)){
+            echo "<p style='color:red';> username atau password anda salah </p>";
+        }?>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <h1>Tambah Data</h1>
+            <div class="input-box">
+                <input type="text" name="nama_xbox" placeholder="Nama Xbox Console" required>
+            </div>
+            <div class="input-box">
+                <input type="text" name="harga_xbox" placeholder="Harga" required>
+            </div>
+            <div class="input-box">
+                <input type="number" name="stok_xbox" placeholder="Stok" required>
+            </div>
+            <div class="input-box">
+                <input type="text" name="spec_xbox" placeholder="Spesifikasi" required>
+            </div>
+            <div>
+                <input type="radio" name="role" value="console" required>Console 
+                <input type="radio" name="role" value="accessoris" required>Accessoris
+            </div>
+            <div class="input-box">
+            <p><input type="file" name="file" required></p>
+            </div>
+            <br>
+            <button type="submit" name="tambah" class="btn">Tambah</button>
+        </form>
+    </div>
 </body>
 </html>
