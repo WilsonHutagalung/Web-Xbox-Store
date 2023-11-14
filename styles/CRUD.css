@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i");
+*{
+  margin: 0;
+  padding: 15;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+}
+/* body{
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center; 
+/* } */
+.add-data {
+  height: 100vh;
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.add-form-container {
+  margin-top: 35px;
+  background-color: whitesmoke;
+  padding: 52px;
+  border-radius: 28px;
+}
+
+.add-form-container h1 {
+  text-align: center;
+}
+
+.add-form-container hr {
+  border: 2px solid yellow;
+  margin-bottom: 18px;
+}
+
+.add-form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.textfield {
+  width: 400px;
+  margin-block: 6px;
+  padding: 8px;
+  border: 1px solid #ababab;
+  border-radius: 4px;
+}
+
+.textfield:focus {
+  border: 1px solid transparent;
+  outline: 1.5px solid #ffdd00;
+}
+
+.login-btn {
+  margin-top: 32px;
+  padding: 8px;
+  background-color: #ffdd00;
+  border: 2px solid #efcd00;
+  border-radius: 4px;
+}
+
+.login-btn:hover {
+  cursor: pointer;
+  background-color:#efcd00 ;
+}

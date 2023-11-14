@@ -1,0 +1,280 @@
+body{
+	margin:0;
+	font-family: sans-serif;
+	overflow-x: hidden;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+.home{
+	height: 100vh;
+	overflow:hidden;
+	position: relative;
+}
+
+.home .slide{
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	z-index:1; 
+	display:none;
+	padding:0 15px;
+	animation: slide 2s ease;
+}
+.home .slide.active{
+	display: flex;
+}
+@keyframes slide{
+	0%{
+		transform:scale(1.1);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+	
+}
+
+.home .container{
+	 flex-grow: 1;
+}
+.home .caption{
+	width:50%;
+}
+.home .caption h1{
+	font-size:42px;
+	color:#000000;
+	margin:0;
+	
+}
+.home .slide.active .caption h1{
+	opacity:0;
+	animation: captionText .5s ease forwards;
+	animation-delay:1s;
+}
+.home .caption p{
+	font-size: 18px;
+	margin:15px 0 30px;
+	color:#222222;
+}
+.home .slide.active .caption p{
+	opacity:0;
+	animation: captionText .5s ease forwards;
+	animation-delay:1.2s;
+}
+.home .caption a{
+ display: inline-block;
+ padding:10px 30px;
+ background-color: #000000;
+ text-decoration: none;
+ color:#ffffff;
+}
+
+.home .slide.active .caption a{
+	opacity:0;
+	animation: captionText .5s ease forwards;
+	animation-delay:1.4s;
+}
+
+@keyframes captionText{
+	0%{
+		opacity:0; transform: translateX(-100px);
+	}
+	100%{
+	 opacity:1; transform: translateX(0px);	
+	}
+}
+
+.home .controls .prev,
+.home .controls .next{
+ position: absolute;
+ z-index:2;
+ top:50%;
+ height:40px;
+ width: 40px;
+ margin-top: -20px;
+ color:#ffffff;
+ background-color: #FF5722;
+ text-align: center;
+ line-height: 40px;
+ font-size:20px;
+ cursor:pointer;
+ transition: all .5s ease;
+}
+.home .controls .prev:hover,
+.home .controls .next:hover{
+	background-color: #000000;
+}
+.home .controls .prev{
+ left:0;
+}
+.home .controls .next{
+ right:0;
+}
+
+.home .indicator{
+	position: absolute;
+	left:50%;
+	bottom:30px;
+	z-index: 2;
+	transform: translateX(-50%);
+}
+
+.home .indicator div{
+	display: inline-block;
+	width:25px;
+	height: 25px;
+	color:#ffffff;
+	background-color: #FF5722;
+	border-radius:50%;
+	text-align: center;
+	line-height: 25px;
+	margin:0 3px;
+}
+
+.home .indicator div.active{
+ background-color: #000;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+	.controls{
+		display: none;
+	}
+}
+
+/* Product */
+.product-us {
+    height: 110vh;
+}
+
+.product-us-title {
+    display: flex;
+    justify-content: center;
+}
+
+.product-us-title h1 {
+    margin-top: 100px;
+    font-size: 38px;
+    line-height: 56px;
+    padding-bottom: 20px;
+}    
+
+.image {
+    margin:0 auto; /* Menengahkan grid secara horizontal */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Mengatur 3 kolom dengan lebar yang sama */
+    gap: 10px; /* Mengatur jarak antara gambar */
+    justify-items: center; /* Menengahkan gambar secara horizontal */
+    max-width: 90%; /*Menentukan lebar maksimal grid*/
+    padding-left: 10px; /* Menambahkan padding di sisi kiri */
+}
+
+.images {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4px 0 8px;;
+}
+
+.image .images img{
+    max-width: 100%; /* Gambar tidak melebihi lebar kontainernya */
+    height: auto;
+}
+.images h3 {
+    font-size: 20px;
+    margin-bottom: 3px; /* Mengatur jarak antara h3 dan h2 */
+    padding-bottom: 3px; /* Sesuaikan sesuai kebutuhan */
+}
+
+.images p {
+    font-size: 15px;
+    margin-top: 3px; /* Mengatur jarak antara h2 dan h3 */
+    padding-bottom: 3px; /* Sesuaikan sesuai kebutuhan */
+    margin-bottom: 3px;
+}
+
+.images .btn a{
+    font-size: 15px;
+    color: green;
+    float: left;
+    margin-top: 3px; /* Mengatur jarak antara h2 dan h3 */
+    padding-bottom: 10px; /* Sesuaikan sesuai kebutuhan */
+    margin-right: 25px; /* Jarak kanan */
+    transition: font-size 0.3s; /* Transisi untuk efek smooth saat hover */
+    cursor: pointer; /* Mengubah kursor saat diarahkan ke teks */
+    text-decoration: none;
+}
+
+.images .btn a:hover {
+    font-size: 16px; /* Ukuran teks membesar saat dihover */
+}
+
+/* Grid */
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-right: 100px;
+}
+
+.right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-right: 50px;
+}
+
+.left img {
+    width: 100%;
+    height: auto; /* Mengatur tinggi gambar agar sesuai dengan rasio aspeknya */
+    margin-right: 100px; /* Menambahkan margin ke kiri gambar */
+}
+
+.bottom-right {
+    display: flex;
+    align-items: center;
+    width: 100px; /* Atur lebar agar sesuai */
+}
+
+.bottom-right img {
+    margin-right: 50px; /* Memberikan jarak antara gambar dan teks */
+}
+
+.bottom-right h3,
+.bottom-right h4 {
+    margin: auto; /* Menghilangkan margin bawaan pada h3 dan h4 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
