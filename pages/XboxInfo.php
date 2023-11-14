@@ -15,13 +15,22 @@ $xbox_detail = mysqli_fetch_assoc($result);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
     <title>Document</title>
 </head>
 <body>
-<h2>Detail Xbox</h2>
-<p>Nama: <?php echo $xbox_detail['nama']; ?></p>
-<p>Harga: $<?php echo $xbox_detail['harga']; ?></p>
-<p>Spesifikasi: $<?php echo $xbox_detail['spesifikasi']; ?></p>
+<!-- <h2>Detail Xbox</h2> -->
+<div style="display: flex; justify-content: center; align-items: center;">
+    <img src="../assets/images/img/<?php echo $xbox_detail['gambar']; ?>" alt="Foto Profil" style="max-width: 70%;">
+</div>
+<div class="information">
+    <div class="name">
+        <h2><?php echo $xbox_detail['nama']; ?></h2>
+    </div>
+    <p> $<?php echo $xbox_detail['harga']; ?></p>
+    <p> Stok: <?php echo $xbox_detail['stok']; ?></p>
+    <p>Spesifikasi:<?php echo $xbox_detail['spesifikasi']; ?></p>
+</div>
     
 </body>
 </html>

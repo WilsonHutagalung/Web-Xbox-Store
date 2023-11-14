@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Croissant+One&family=Dela+Gothic+One&family=Inter:wght@600&family=Skranji:wght@700&display=swap');
+
+
 body{
 	margin:0;
 	font-family: sans-serif;
@@ -163,10 +166,10 @@ body{
 }
 
 .product-us-title h1 {
-    margin-top: 100px;
+    margin-top: 130px;
     font-size: 38px;
     line-height: 56px;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
 }    
 
 .image {
@@ -222,6 +225,7 @@ body{
     max-width: 80%;
     margin: 0 auto;
     padding: 20px;
+	margin-bottom: 120px;
 }
 
 .grid {
@@ -266,6 +270,37 @@ body{
     margin: auto; /* Menghilangkan margin bawaan pada h3 dan h4 */
 }
 
+.Containers {
+    display: flex;
+    justify-content: space-between;
+}
+.information {
+    width: 70%; /* Sesuaikan lebar informasi sesuai kebutuhan */
+	margin-left: 50px;
+}
+
+.Cart p a {
+    width: fit-content; /* Menyesuaikan lebar dengan kontennya */
+	height: 50px;
+    padding: 0px 11px; /* Menambahkan padding agar terlihat lebih seperti tombol */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 290px; /* Menambahkan margin kanan untuk memberi ruang */
+    margin-top: -5px; /* Atur margin-top negatif agar Cart naik sedikit */
+    background-color: green; /* Warna latar belakang */
+    color: #fff; /* Warna teks */
+    border: none; /* Menghilangkan border */
+    cursor: pointer; /* Menunjukkan bahwa ini adalah elemen yang bisa diklik */
+    border-radius: 5px; /* Menambahkan sudut melengkung pada tombol */
+	text-decoration: none;
+}
+
+
+.name h2{
+	font-family: "Inter", sans-serif;
+	font-size: 34px;
+} 
 
 
 

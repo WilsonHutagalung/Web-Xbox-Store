@@ -199,7 +199,7 @@ if (isset($_SESSION['username'])) {
                   <div class="call-to-action">
                     <div class="call-to-action-highlight">
                       <p class="call-to-action-text underline-hidden">
-                        PRE-ORDER NOW
+                        BUY NOW
                       </p>
                       <img src="./assets/images/additional/more-white-1.png" alt="See more" class="call-to-action-arrow" />
                     </div>
@@ -273,8 +273,8 @@ if (isset($_SESSION['username'])) {
             <img class="gambar" src="./assets/images/img/<?php echo $console['gambar']; ?> " alt="Foto Profil">
             <h3><?php echo $console["nama"] ?></h3>
             <p>$<?php echo $console["harga"] ?></p>
-            <h4 class="btn"><a href="detail_xbox.php?id=<?php echo $console['id']; ?>">PRE-ORDER</a></h4>
-            <h4 class="btn"><a href="XboxInfo.php?id=<?php echo $console['id']; ?>">LEARN MORE</a></h4>
+            <h4 class="btn"><a href="./pages/Buy.php?id=<?php echo $console['id']; ?>">BUY NOW </ow</h4>
+            <h4 class="btn"><a href="./pages/XboxInfo.php?id=<?php echo $console['id']; ?>">LEARN MORE</a></h4>
           </div>
         <?php $i++;
         endforeach;
@@ -295,8 +295,8 @@ if (isset($_SESSION['username'])) {
                     <div class="bottom-right">
                         <img src="./assets/images/additional/Battery.jpg" alt="Gambar 3" width="50%">
                         <h3 class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis natus quis reiciendis possimus laboriosam necessitatibus assumenda voluptatum quia rerum mollitia consequuntur voluptate nulla eveniet commodi qui nemo, quo vel tempora.</h3>
-                        <h4 class="btn"><a href="detail_xbox.php?id=<?php echo $console['id']; ?>">PRE-ORDER</a></h4>
-                        <h4 class="btn"><a href="XboxInfo.php?id=<?php echo $console['id']; ?>">LEARN MORE</a></h4>
+                        <h4 class="btn"><a href="detail_xbox.php?id=<?php echo $console['id']; ?>">BUY NOW </ow</h4>
+                        <h4 class="btn"><a href="./pages/XboxInfo.php?id=<?php echo $console['id']; ?>">LEARN MORE</a></h4>
                     </div>
                 </div>
             </div>
