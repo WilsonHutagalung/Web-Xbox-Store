@@ -133,11 +133,13 @@ if (isset($_SESSION['username'])) {
             </div>
           </div>
           <div class="header-misc">
-            <div class="nav-icon" id="search">
+            <!-- <div class="nav-icon" id="search">
               <img src="./assets/images/header/search1.png" />
-            </div>
+            </div> -->
             <div class="nav-icon" id="shopping-cart">
-              <img src="./assets/images/header/cart1.png" />
+              <a href="pages/cart.php">
+                <img src="./assets/images/header/cart1.png" />
+              </a>
             </div>
             <div class="nav-icon" id="account">
               <!-- <div class="profile-icon"> -->
@@ -169,7 +171,9 @@ if (isset($_SESSION['username'])) {
           </div>
           <div class="account">
             <div class="nav-icon" id="shopping-cart">
-              <img src="./assets/images/header/cart1.png" />
+              <a href="pages/cart.php">
+                <img src="./assets/images/header/cart1.png" />
+              </a>
             </div>
             <div class="nav-icon" id="account">
                 <!-- <img src="./images/header/master-chief.jpg" /> -->

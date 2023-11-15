@@ -3,6 +3,87 @@ body {
     background-color: #f4f4f4;
 }
 
+.center {
+  margin: auto;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.flex-row,
+.flex-row * {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.white {
+  color: white;
+}
+
+.header-mobile {
+  display: none;
+}
+
+.logo-break {
+  font-size: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.dropdown {
+  margin-left: 20px;
+}
+
+.dropdown:last-child {
+  margin-right: 20px;
+}
+
+.header-misc {
+  margin-left: auto;
+}
+
+.header-tabs,
+.dropdown-menus {
+  width: 100%;
+}
+
+.dropdown-menus div:last-child {
+  margin-left: auto;
+}
+
+.profile-icon {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  text-decoration: none;
+}
+
+.header-misc * {
+  margin-left: 10px;
+}
+
+header .center .flex-row {
+  height: 55px;
+}
+
+.dropdown:hover p {
+  border-bottom: 2px solid #262626;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.logo img {
+  height: 23px;
+}
+
+.nav-icon:hover {
+  cursor: pointer;
+}
+
 .container {
     max-width: 1500px;
     margin: 10px auto;    
@@ -28,8 +109,7 @@ td {
     border: 1px solid #ddd;
 }
 
-th,
-td {
+th .data{
     padding: 8px;
     text-align: left;
 }

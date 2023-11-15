@@ -25,7 +25,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/Dashboard.css">
-    <link rel="stylesheet" href="../styles/desktop-half.css"/>
+    <!-- <link rel="stylesheet" href="../styles/desktop-half.css"/> -->
     <title>Database</title>
 </head>
 

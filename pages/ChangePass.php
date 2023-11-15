@@ -1,5 +1,5 @@
 <?php
-require './pages/koneksi.php';
+require 'koneksi.php';
 
 if(isset($_POST['update'])){
     $username = $_POST["username"];
@@ -33,7 +33,7 @@ if(isset($_POST['update'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <title>Change Password</title>
     <link rel="stylesheet" href="../styles/Form.css">
 </head>
 <body>
@@ -44,17 +44,17 @@ if(isset($_POST['update'])){
             echo "<p style='color:red';> username atau password anda salah </p>";
         }?>
         <form action="" method="POST">
-            <h1>Sign In</h1>
+            <h1>Change Password</h1>
             <div class="input-box">
-                <input type="text" name="username" placeholder="username" required>
+                <input type="text" name="username" placeholder="Username" required>
             </div>
             <div class="input-box">
                 <input type="password" name="password" placeholder="New password" required>
             </div>
             <div class="input-box">
-                <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password" autocomplete="off"  required>>
+                <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password" autocomplete="off"  required>
             </div>
-            <button type="submit" name="update" class="btn">Login</button>
+            <button type="submit" name="update" class="btn">Update</button>
         </form>
     </div>
 </body>

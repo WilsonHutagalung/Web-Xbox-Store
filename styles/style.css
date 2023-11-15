@@ -279,6 +279,10 @@ body{
 	margin-left: 50px;
 }
 
+.information p{
+	font-size: 18px;
+}
+
 .Cart p a {
     width: fit-content; /* Menyesuaikan lebar dengan kontennya */
 	height: 50px;
@@ -287,7 +291,7 @@ body{
     align-items: center;
     justify-content: flex-end;
     margin-right: 290px; /* Menambahkan margin kanan untuk memberi ruang */
-    margin-top: -5px; /* Atur margin-top negatif agar Cart naik sedikit */
+    margin-top: -50px; /* Atur margin-top negatif agar Cart naik sedikit */
     background-color: green; /* Warna latar belakang */
     color: #fff; /* Warna teks */
     border: none; /* Menghilangkan border */
@@ -299,9 +303,15 @@ body{
 
 .name h2{
 	font-family: "Inter", sans-serif;
-	font-size: 34px;
+	font-size: 26px;
+	margin-bottom: 10px; /* Sesuaikan dengan tinggi jarak yang diinginkan */
 } 
 
+.details p{
+	font-size: 16px;
+	margin-bottom: 10px; /* Sesuaikan dengan tinggi jarak yang diinginkan */
+
+}
 
 
 

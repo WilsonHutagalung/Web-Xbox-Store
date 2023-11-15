@@ -115,7 +115,7 @@ $xbox_detail = mysqli_fetch_assoc($result);
     </div>
   </header>
 <!-- <h2>Detail Xbox</h2> -->
-<div style="display: flex; justify-content: center; align-items: center;">
+<div style="display: flex; justify-content: center; align-items: center; margin-bottom: 60px; margin-top:40px">
 
 <!-- Gambar Utama -->
 <div style="flex: 1;">
@@ -140,9 +140,11 @@ $xbox_detail = mysqli_fetch_assoc($result);
         <div class="name">
             <h2><?php echo $xbox_detail['nama']; ?></h2>
         </div>
-        <p> $<?php echo $xbox_detail['harga']; ?></p>
-        <p> Stok: <?php echo $xbox_detail['stok']; ?></p>
-        <p>Spesifikasi: <?php echo $xbox_detail['spesifikasi']; ?></p>
+        <div class="details">
+            <p> $<?php echo $xbox_detail['harga']; ?></p>
+            <p> Stok: <?php echo $xbox_detail['stok']; ?></p>
+            <p>Spesifikasi: <?php echo $xbox_detail['spesifikasi']; ?></p>  
+        </div>
 
     </div>
 
