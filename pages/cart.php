@@ -1,6 +1,27 @@
 <?php
   require 'koneksi.php';
   session_start();
+  $username = $_SESSION['username'];
+
+  $query = "SELECT * FROM xbox WHERE id IN (SELECT id_item FROM keranjang WHERE username = '$username')";
+  $result = mysqli_query($conn, $query);
+
+  $carts = [];
+  while ($cart = mysqli_fetch_assoc($result)) {
+    $carts[] = $cart;
+  }
+
+  if (isset($_POST['btnCheckout'])) {
+    $totalPrice = $_POST['totalPrice'];
+    $query = "INSERT INTO transaction (username, total_price) VALUES ('$username', $totalPrice)";
+    mysqli_query($conn, $query);
+
+    $query = "DELETE FROM keranjang WHERE username = '$username'";
+    mysqli_query($conn, $query);
+
+    header("Location: ../index.php");
+    exit;
+  }
 ?>
 
 
@@ -27,28 +48,28 @@
             <li class="subtotal">Subtotal</li>
           </ul>
         </div>
-        <!-- <?php foreach ($carts as $cart) : ?>
+        <?php foreach ($carts as $cart) : ?>
           <div class="basket-product">
             <div class="item">
               <div class="product-image">
-                <img src="../resources/img/<?= $cart['photo'] ?>" alt="Placholder Image 2" class="product-frame">
+                <img src="../assets/images/img/<?php echo $cart['gambar'] ?>" alt="Placholder Image 2" class="product-frame">
               </div>
               <div class="product-details">
                 <h2>
                   <span class="item-quantity">
-                    <?= $cart['quantity'] ?>
-                  </span> <?= $cart['name'] ?>
+                    <?= $cart['nama'] ?>
+                  </span>
                 </h2>
               </div>
             </div>
-            <div class="price"><?= $cart['price'] ?></div>
+            <div class="price"><?= $cart['harga'] ?></div>
             <div class="quantity">
               <form action="update_quantity.php" method="post" class="quantity-form">
                 <input type="hidden" name="id" value="<?=$cart['id'] ?>">
-                <input type="number" name="quantity" value="<?= abs($cart['quantity']) ?>" min="1" class="quantity-field">
+                <input type="number" name="quantity" value="<?= abs($cart['stok']) ?>" min="1" class="quantity-field">
               </form>
             </div>
-            <div class="subtotal"><?= $cart['price'] * $cart['quantity'] ?></div>
+            <div class="subtotal"><?= (int)$cart['harga'] * (int)$cart['stok'] ?></div>
             <input type="hidden" name="id" value="<?= $cart['id'] ?>">
             <div class="remove">
               <a href="delete.php?id=<?= $cart["id"] ?>" onclick="return confirm('Apakah anda ingin menghapus barang ini dari keranjang?')">
@@ -56,7 +77,7 @@
               </a>
             </div>
           </div>
-        <?php endforeach ?> -->
+        <?php endforeach ?>
       </div>
 
       <form action="" method="post">
