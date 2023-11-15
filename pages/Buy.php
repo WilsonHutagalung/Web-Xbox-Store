@@ -1,6 +1,8 @@
 <?php
 require 'koneksi.php';
+session_start();
 $xbox_id = $_GET['id'];
+$username = $_SESSION['username'];
 
 // Lakukan query untuk mengambil detail Xbox dengan ID yang sesuai
 $query = "SELECT * FROM xbox WHERE id = $xbox_id";
@@ -72,9 +74,9 @@ $xbox_detail = mysqli_fetch_assoc($result);
                 <!-- <img src="./images/header/master-chief.jpg" /> -->
                 <?php
                 if (isset($_SESSION['submit'])) {
-                  echo "<li><a href='pages/Logout.php'><button type='button'>Logout</button></a><h3></h3></li>";
+                  echo "<li><a href='../pages/Logout.php'><button type='button'>Logout</button></a><h3></h3></li>";
                 } else {
-                  echo "<li><a href='pages/Login.php'><button type='button'>Login</button></a><h3></h3></li>";
+                  echo "<li><a href='../pages/Login.php'><button type='button'>Login</button></a><h3></h3></li>";
                 }
                 ?>
               <!-- </div> -->
@@ -149,11 +151,22 @@ $xbox_detail = mysqli_fetch_assoc($result);
     </div>
 
     <div class="Cart">
-        <p><a href="#">Tambahkan Ke Keranjang</a></p>
+        <p><a href="../index.php" id="addToCart">Tambahkan Ke Keranjang</a></p>
     </div>
 
 </div>
 
-    
+<script>
+  document.getElementById("addToCart").addEventListener("click", function() {
+    <?php if (!isset($_SESSION['submit'])) {
+      echo "alert('Anda Harus Login Terlebih Dahulu')";
+    } else {
+      $query = "INSERT INTO keranjang VALUES ('', '$username', '$xbox_id')";
+      mysqli_query($conn, $query);
+      echo "alert('Xbox Berhasil Ditambahkan Ke Keranjang')";
+    } ?>
+  });
+</script>
+
 </body>
 </html>
