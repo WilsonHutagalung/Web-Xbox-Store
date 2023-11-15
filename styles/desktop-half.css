@@ -39,6 +39,11 @@ body {
   margin-left: 20px;
 }
 
+.dropdown-menus p > a{
+  text-decoration: none;
+  color: black; 
+}
+
 .dropdown:last-child {
   margin-right: 20px;
 }
@@ -83,6 +88,10 @@ header .center .flex-row {
 
 .logo img {
   height: 23px;
+}
+
+.nav-icon li a{
+  text-decoration: none;
 }
 
 .nav-icon:hover {

@@ -11,6 +11,14 @@
     $carts[] = $cart;
   }
 
+$sum = 0;
+$total_price_cart = 0;
+$total_item_cart = 0;
+foreach ($carts as $cart) {
+$total_price_cart += $cart['harga'] * $cart['stok'];
+$total_item_cart++;
+}
+
   if (isset($_POST['btnCheckout'])) {
     $totalPrice = $_POST['totalPrice'];
     $query = "INSERT INTO transaction (username, total_price) VALUES ('$username', $totalPrice)";
@@ -69,7 +77,7 @@
                 <input type="number" name="quantity" value="<?= abs($cart['stok']) ?>" min="1" class="quantity-field">
               </form>
             </div>
-            <div class="subtotal"><?= (int)$cart['harga'] * (int)$cart['stok'] ?></div>
+            <div class="subtotal"><?= $total_price_cart ?></div>
             <input type="hidden" name="id" value="<?= $cart['id'] ?>">
             <div class="remove">
               <a href="delete.php?id=<?= $cart["id"] ?>" onclick="return confirm('Apakah anda ingin menghapus barang ini dari keranjang?')">
@@ -83,14 +91,14 @@
       <form action="" method="post">
         <aside>
           <div class="summary">
-            <div class="summary-total-items"></div>
+            <div class="summary-total-items"> <?= $total_item_cart ?> Item(s) in Cart</div>
             <div class="summary-subtotal">
               <div class="subtotal-title">Subtotal</div>
-              <div class="subtotal-value final-value" id="basket-subtotal"></div>
+              <div class="subtotal-value final-value" id="basket-subtotal"><?= $total_price_cart ?></div>
             </div>
             <div class="summary-total">
               <div class="total-title">Total</div>
-              <div class="total-value final-value" id="basket-total"></div>
+              <div class="total-value final-value" id="basket-total"><?= $total_price_cart ?></div>
               <input class="total-value final-value" id="basket-total-hidden" type="hidden" name="totalPrice">
             </div>
             <div class="summary-checkout">

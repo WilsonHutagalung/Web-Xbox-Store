@@ -94,11 +94,3 @@ function removeItem(removeButton) {
 $('.quantity-field').on('change', function() {
     $(this).closest('.quantity-form').submit();
 });
-
-//Dark Mode
-const modeGelap = document.getElementById("modegelap");
-
-
-$(modeGelap).click(function () {
-    document.body.classList.toggle("dark-mode");
-});

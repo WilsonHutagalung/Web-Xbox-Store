@@ -107,35 +107,32 @@ if (isset($_SESSION['username'])) {
             </div>
             <div class="dropdown-menus">
               <div class="dropdown" id="games">
-                <p class="underline-hidden" class="dropdown-text">Home</p>
+                <p class="underline-hidden" class="dropdown-text"><a href="index.php">Home</a></p>
                 <img src="./assets/images/header/more.png" />
               </div>
               <div class="dropdown" id="devices">
-                <p class="underline-hidden" class="dropdown-text">My Box</p>
+                <p class="underline-hidden" class="dropdown-text"><a href="#Console">Xbox Console</a></p>
                 <img src="./assets/images/header/more.png" />
               </div>
               <div class="dropdown" id="community">
                 <p class="underline-hidden" class="dropdown-text">
-                  About Us
+                <a href="#Contact">Contact</a>
                 </p>
                 <img src="./assets/images/header/more.png" />
               </div>
               <div class="dropdown" id="my-xbox">
-                <p class="underline-hidden" class="dropdown-text">Devices</p>
+                <p class="underline-hidden" class="dropdown-text"><a href="#Acc">Accessories</a></p>
                 <img src="./assets/images/header/more.png" />
               </div>
               <div class="dropdown" id="xbox-support">
                 <p class="underline-hidden" class="dropdown-text">
-                  Xbox Support
+                <a href="#Acc">About Us</a>
                 </p>
                 <img src="./assets/images/header/more.png" />
               </div>
             </div>
           </div>
           <div class="header-misc">
-            <!-- <div class="nav-icon" id="search">
-              <img src="./assets/images/header/search1.png" />
-            </div> -->
             <div class="nav-icon" id="shopping-cart">
               <a href="pages/cart.php">
                 <img src="./assets/images/header/cart1.png" />
@@ -146,9 +143,9 @@ if (isset($_SESSION['username'])) {
                 <!-- <img src="./images/header/master-chief.jpg" /> -->
                 <?php
                 if (isset($_SESSION['submit'])) {
-                  echo "<li><a href='pages/Logout.php'><button type='button'>Logout</button></a><h3></h3></li>";
+                  echo "<li><a href='pages/Logout.php'><button type='button'>Logout</button></a></li>";
                 } else {
-                  echo "<li><a href='pages/Login.php'><button type='button'>Login</button></a><h3></h3></li>";
+                  echo "<li><a href='pages/Login.php'><button type='button'>Login</button></a></li>";
                 }
                 ?>
               <!-- </div> -->
@@ -179,9 +176,9 @@ if (isset($_SESSION['username'])) {
                 <!-- <img src="./images/header/master-chief.jpg" /> -->
                 <?php
                 if (isset($_SESSION['submit'])) {
-                  echo "<li><a href='pages/Logout.php'><button type='button'>Logout</button></a><h3></h3></li>";
+                  echo "<li><a href='pages/Logout.php'><button type='button'>Logout</button></a></li>";
                 } else {
-                  echo "<li><a href='pages/Login.php'><button type='button'>Login</button></a><h3></h3></li>";
+                  echo "<li><a href='pages/Login.php'><button type='button'>Login</button></a></li>";
                 }
                 ?>
             </div>
@@ -264,7 +261,7 @@ if (isset($_SESSION['username'])) {
         </div>
       </div>
     </section>
-    <div class="Product-us" id="Product">
+    <div class="Product-us" id="Console">
       <section class="product-us-title">
         <h1 class="ptitle">All Xbox Consoles</h1>
       </section>
@@ -286,7 +283,7 @@ if (isset($_SESSION['username'])) {
         endforeach;
         ?>
       </div>
-      <section class="product-us-title">
+      <section class="product-us-title" id="Acc">
             <h1 class="ptitle">Gear up with Xbox accessories</h1>
       </section>
       <div class="image">
@@ -309,7 +306,7 @@ if (isset($_SESSION['username'])) {
       </div>
   </main>
 
-  <div class="center">
+  <div class="center" id="Contact">
     <div class="follow">
       <p>Follow Xbox</p>
       <img src="./assets/images/footer/email.png" alt="email" />
@@ -367,7 +364,7 @@ if (isset($_SESSION['username'])) {
           <p class="underline-hidden">Trademarks</p>
           <p class="underline-hidden">Safety & eco</p>
           <p class="underline-hidden">About our ads</p>
-          <p class="underline-hidden">&copy; Microsoft 2020</p>
+          <p class="underline-hidden">&copy; Microsoft 2023</p>
         </div>
       </div>
     </div>

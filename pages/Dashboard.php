@@ -44,39 +44,22 @@ while ($row = mysqli_fetch_assoc($result)) {
             <div class="dropdown-menus">
               <div class="dropdown" id="game-pass">
                 <p class="underline-hidden" class="dropdown-text">
-                  Game Pass
+                <a href="../index.php">Home</a>
                 </p>
                 <img src="../assets/images/header/more.png" />
               </div>
               <div class="dropdown" id="devices">
-                <p class="underline-hidden" class="dropdown-text">Devices</p>
-                <img src="../assets/images/header/more.png" />
-              </div>
-              <div class="dropdown" id="community">
-                <p class="underline-hidden" class="dropdown-text">
-                  Community
-                </p>
-                <img src="../assets/images/header/more.png" />
-              </div>
-              <div class="dropdown" id="my-xbox">
-                <p class="underline-hidden" class="dropdown-text">My Xbox</p>
+                <p class="underline-hidden" class="dropdown-text"><a href="#Contact">Riwayat</a></p>
                 <img src="../assets/images/header/more.png" />
               </div>
               <div class="dropdown" id="xbox-support">
                 <p class="underline-hidden" class="dropdown-text">
-                  Xbox Support
+                <a href="">About Us</a>
                 </p>
                 <img src="../assets/images/header/more.png" />
               </div>
             </div>
           </div>
-          <div class="header-misc">
-            <div class="nav-icon" id="search">
-              <img src="../assets/images/header/search1.png" />
-            </div>
-            <div class="nav-icon" id="shopping-cart">
-              <img src="../assets/images/header/cart1.png" />
-            </div>
             <div class="nav-icon" id="account">
                 <?php
                 if (isset($_SESSION['submit'])) {
