@@ -8,6 +8,8 @@ if (isset($_POST['submit'])) {
     if ($username == 'admin' && $password == 'admin') {
         // Jika username dan password adalah admin, berikan akses
         $_SESSION['submit'] = true;
+        $_SESSION['username'] = $username;
+        $_SESSION['password'] = $password;
         header("Location: Dashboard.php");
         exit;
     }
@@ -17,8 +19,10 @@ if (isset($_POST['submit'])) {
         $row  = mysqli_fetch_assoc($result);
         
         if(password_verify($password, $row['password'])){
-            $_SESSION['submit'] =true;
-            header("location:index.php");
+            $_SESSION['submit'] = true;
+            $_SESSION['username'] = $username;
+            $_SESSION['password'] = $password;
+            header("location: ../index.php");
             exit;   
         }
     }
