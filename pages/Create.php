@@ -56,29 +56,6 @@ if (isset($_POST['tambah'])) {
     <link rel="stylesheet" href="../styles/Form.css">
 </head>
 <body>
-    <!-- <section class="add-data">
-        <div class="add-form-container">
-            <h1>Tambah Data</h1><hr><br>
-            <form action="" method="POST" name="tambah" enctype="multipart/form-data">
-                <label for="nama">Nama XBOX</label>
-                <input type="text" name="nama_xbox" class="textfield" required>
-                <label for="harga">Harga</label>
-                <input type="text" name="harga_xbox" class="textfield" required>
-                <label for="stok">Stok</label>
-                <input type="number" name="stok_xbox" class="textfield" required>
-                <label for="Spesifikasi">Spesifikasi</label>
-                <input type="text" name="spec_xbox" class="textfield" required>
-                <label for="kategori">Kategori</label>
-                <div>
-                    <input type="radio" name="role" value="console" required>Console
-                    <input type="radio" name="role" value="accessoris" required>Accessoris
-                </div>
-
-                <p>add image : <input type="file" name="file" required> </p>
-                <input type="submit" name="tambah" name="spn" value="Tambah Data" class="login-btn">
-            </form>
-        </div>
-    </section> -->
     <?php echo isset($row); ?>
     <div class="wrapper">
         <?php

@@ -272,6 +272,7 @@ if (isset($_SESSION['username'])) {
         <?php
         $i = 1;
         foreach ($xbox as $console) :
+        if ($console['role'] == "console") :
         ?>
           <div class="images">
             <img class="gambar" src="./assets/images/img/<?php echo $console['gambar']; ?> " alt="Foto Profil">
@@ -281,30 +282,31 @@ if (isset($_SESSION['username'])) {
             <h4 class="btn"><a href="./pages/XboxInfo.php?id=<?php echo $console['id']; ?>">LEARN MORE</a></h4>
           </div>
         <?php $i++;
+        endif;
         endforeach;
         ?>
       </div>
       <section class="product-us-title">
             <h1 class="ptitle">Gear up with Xbox accessories</h1>
-        </section>
-        <div class="container">
-            <div class="grid">
-                <div class="left">
-                    <img src="./assets/images/additional/Stik1.png" alt="Gambar 1">
-                </div>
-                <div class="right">
-                    <div class="top-right">
-                        <img src="./assets/images/additional/Stik2.png" alt="Gambar 2">
-                    </div>
-                    <div class="bottom-right">
-                        <img src="./assets/images/additional/Battery.jpg" alt="Gambar 3" width="50%">
-                        <h3 class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis natus quis reiciendis possimus laboriosam necessitatibus assumenda voluptatum quia rerum mollitia consequuntur voluptate nulla eveniet commodi qui nemo, quo vel tempora.</h3>
-                        <h4 class="btn"><a href="detail_xbox.php?id=<?php echo $console['id']; ?>">BUY NOW </ow</h4>
-                        <h4 class="btn"><a href="./pages/XboxInfo.php?id=<?php echo $console['id']; ?>">LEARN MORE</a></h4>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </section>
+      <div class="image">
+        <?php
+        $i = 1;
+        foreach ($xbox as $console) :
+        if ($console['role'] == "accessoris") :
+        ?>
+          <div class="images">
+            <img class="gambar" src="./assets/images/img/<?php echo $console['gambar']; ?> " alt="Foto Profil">
+            <h3><?php echo $console["nama"] ?></h3>
+            <p>$<?php echo $console["harga"] ?></p>
+            <h4 class="btn"><a href="./pages/Buy.php?id=<?php echo $console['id']; ?>">BUY NOW </ow</h4>
+            <h4 class="btn"><a href="./pages/XboxInfo.php?id=<?php echo $console['id']; ?>">LEARN MORE</a></h4>
+          </div>
+        <?php $i++;
+        endif;
+        endforeach;
+        ?>
+      </div>
   </main>
 
   <div class="center">
