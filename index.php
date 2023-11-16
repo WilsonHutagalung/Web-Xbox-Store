@@ -13,7 +13,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 if (isset($_SESSION['username'])) {
   $user = $_SESSION['username'];
 } else {
-  $user = "guest";
+  $user = "Guest";
 }
 ?>
 
@@ -22,7 +22,6 @@ if (isset($_SESSION['username'])) {
 
 <head>
   <meta charset="UTF-8" />
-  <!-- <link rel="icon" href="./logo.png" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Xbox Homepage Clone</title>
   <link rel="stylesheet" href="./styles/style.css">
@@ -125,10 +124,14 @@ if (isset($_SESSION['username'])) {
                 <img src="./assets/images/header/more.png" />
               </div>
               <div class="dropdown" id="xbox-support">
-                <p class="underline-hidden" class="dropdown-text">
-                <a href="#Acc">About Us</a>
-                </p>
-                <img src="./assets/images/header/more.png" />
+                <?php 
+                if(isset($_SESSION['username'])){
+                  echo "<p class='underline-hidden dropdown-text'><a href='pages/Profile.php?id=$user'>$user</a></p>";
+
+                } else{
+                  echo "<p class='underline-hidden' class='dropdown-text'>$user</p>";
+                }
+                ?>
               </div>
             </div>
           </div>
@@ -139,8 +142,6 @@ if (isset($_SESSION['username'])) {
               </a>
             </div>
             <div class="nav-icon" id="account">
-              <!-- <div class="profile-icon"> -->
-                <!-- <img src="./images/header/master-chief.jpg" /> -->
                 <?php
                 if (isset($_SESSION['submit'])) {
                   echo "<li><a href='pages/Logout.php'><button type='button'>Logout</button></a></li>";
@@ -148,7 +149,6 @@ if (isset($_SESSION['username'])) {
                   echo "<li><a href='pages/Login.php'><button type='button'>Login</button></a></li>";
                 }
                 ?>
-              <!-- </div> -->
             </div>
           </div>
         </div>
@@ -173,7 +173,6 @@ if (isset($_SESSION['username'])) {
               </a>
             </div>
             <div class="nav-icon" id="account">
-                <!-- <img src="./images/header/master-chief.jpg" /> -->
                 <?php
                 if (isset($_SESSION['submit'])) {
                   echo "<li><a href='pages/Logout.php'><button type='button'>Logout</button></a></li>";
@@ -275,7 +274,7 @@ if (isset($_SESSION['username'])) {
             <img class="gambar" src="./assets/images/img/<?php echo $console['gambar']; ?> " alt="Foto Profil">
             <h3><?php echo $console["nama"] ?></h3>
             <p>$<?php echo $console["harga"] ?></p>
-            <h4 class="btn"><a href="./pages/Buy.php?id=<?php echo $console['id']; ?>">BUY NOW </ow</h4>
+            <h4 class="btn"><a href="./pages/Buy.php?id=<?php echo $console['id']; ?>">BUY NOW</h4>
             <h4 class="btn"><a href="./pages/XboxInfo.php?id=<?php echo $console['id']; ?>">LEARN MORE</a></h4>
           </div>
         <?php $i++;
