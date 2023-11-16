@@ -50,9 +50,74 @@ button:hover {
     background-color: #45a049;
 }
 
-#profile-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 16px;
+@media (max-width: 1099px){
+    .container {
+        max-width: 500px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 899px){
+    .container {
+        max-width: 400px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    input {
+        font-size: 12px;
+    }
+
+    button {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 599px){
+    .container {
+        max-width: 300px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    input {
+        font-size: 10px;
+    }
+
+    button {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 399px){
+    .container {
+        max-width: 200px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    input {
+        font-size: 8px;
+    }
+
+    button {
+        font-size: 8px;
+    }
 }
