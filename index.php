@@ -136,8 +136,16 @@ if (isset($_SESSION['username'])) {
             </div>
           </div>
           <div class="header-misc">
-            <div class="nav-icon" id="shopping-cart">
-              <a href="pages/cart.php">
+            <div class="nav-icon">
+              <a href=
+                <?php
+                    if ($user === "guest") {
+                      echo "./pages/Login.php";
+                    } else {
+                      echo "./pages/cart.php";
+                    }
+                ?>
+                id="shopping-cart">
                 <img src="./assets/images/header/cart1.png" />
               </a>
             </div>
@@ -167,8 +175,17 @@ if (isset($_SESSION['username'])) {
             <img src="./assets/images/header/microsoft-logo.png" />
           </div>
           <div class="account">
-            <div class="nav-icon" id="shopping-cart">
-              <a href="pages/cart.php">
+            <div class="nav-icon">
+              <a href=
+                <?php
+                  if ($user === "guest") {
+                    echo "<script>alert('Mohon login terlebih dahulu');</script>";
+                    echo "./pages/Login.php";
+                  } else {
+                    echo "./pages/cart.php";
+                  }
+                ?>
+                id="shopping-cart">
                 <img src="./assets/images/header/cart1.png" />
               </a>
             </div>
@@ -372,5 +389,14 @@ if (isset($_SESSION['username'])) {
     <img src="./assets/images/footer/up2.png" alt="Back to top" />
   </div>
 </body>
+
+<script>
+  document.getElementById("shopping-cart").addEventListener("click", function() {
+    let user = "<?php echo $user; ?>";
+    if (user === "guest") {
+      alert('Mohon login terlebih dahulu');
+    }
+  });
+</script>
 
 </html>
