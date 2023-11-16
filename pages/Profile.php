@@ -1,6 +1,8 @@
 <?php
 session_start();
 require 'koneksi.php';
+$username1 = $_SESSION['username'];
+
 
 if(isset($_POST['submit'])){
     $username = $_POST["username"];
@@ -13,7 +15,7 @@ if(isset($_POST['submit'])){
         document.location.href='Register.php';
         </script>";
     }else{
-        $sql = "UPDATE akun SET password = '$password' WHERE username = '$username'";
+        $sql = "UPDATE akun SET password = '$password', username = '$username' WHERE username = '$username1'";
         $result_query = mysqli_query($conn,$sql);
 
         if(mysqli_affected_rows($conn) > 0){

@@ -106,7 +106,7 @@ if (isset($_SESSION['username'])) {
             </div>
             <div class="dropdown-menus">
               <div class="dropdown" id="games">
-                <p class="underline-hidden" class="dropdown-text"><a href="index.php">Home</a></p>
+                <p class="underline-hidden" class="dropdown-text"><a href="./pages/AboutUs.php">About Us</a></p>
                 <img src="./assets/images/header/more.png" />
               </div>
               <div class="dropdown" id="devices">
