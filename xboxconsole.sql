@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2023 at 06:22 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Waktu pembuatan: 16 Nov 2023 pada 14.28
+-- Versi server: 10.4.28-MariaDB
+-- Versi PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `akun`
+-- Struktur dari tabel `akun`
 --
 
 CREATE TABLE `akun` (
@@ -34,39 +34,32 @@ CREATE TABLE `akun` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `akun`
+-- Dumping data untuk tabel `akun`
 --
 
 INSERT INTO `akun` (`id_user`, `username`, `password`) VALUES
 (1, 'Wilson', '$2y$10$Ex23lNeiKO8AO84G.Dzs9ucOzWPHT4PKeJsjj1lZnpvnZFk5b0nES'),
-(2, 'asd', '$2y$10$pmacCFoqtUQUFK74F4qZc./MQ30.oLrCFseJz/.cZ/j1dz8jzDNsC');
+(2, 'Agus', '$2y$10$gUFyxDDGRtVOrWuS7cA6sOmjJr5rSBg.OZHz46rAAXgCaxmMq/5nC'),
+(3, 'Nabil', '$2y$10$wNjT/dDyToz1zI6ZSMdsS.lxURmTh2HpEZD9VeVE4N3Rj9D6GZiGS'),
+(4, 'asd', '$2y$10$PoX7KFD4iz11mzFhc6XelOUTyh3tJnxJ.rVV2A8GWp8E1CV9YEj5C');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `keranjang`
+-- Struktur dari tabel `keranjang`
 --
 
 CREATE TABLE `keranjang` (
   `id_keranjang` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `id_item` int(11) NOT NULL
+  `id_item` int(11) NOT NULL,
+  `jumlah` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `keranjang`
---
-
-INSERT INTO `keranjang` (`id_keranjang`, `username`, `id_item`) VALUES
-(1, 'asd', 14),
-(2, 'asd', 14),
-(3, 'asd', 13),
-(4, 'asd', 14);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `xbox`
+-- Struktur dari tabel `xbox`
 --
 
 CREATE TABLE `xbox` (
@@ -80,56 +73,57 @@ CREATE TABLE `xbox` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `xbox`
+-- Dumping data untuk tabel `xbox`
 --
 
 INSERT INTO `xbox` (`id`, `nama`, `stok`, `harga`, `spesifikasi`, `role`, `gambar`) VALUES
-(1, 'XBOX Max', 20, '2000', 'GACOR KANG', 'console', '2023-11-15 XBOX Max.jpg'),
-(2, 'Stik nya ini DLC Co', 60, '50000', 'Kirian', 'accessoris', '2023-11-15 Stik nya ini DLC Co.png');
+(7, 'Headset', 10, '489,999', 'Bluetooth version 5.2 ; Bluetooth profiles A2DP 1.3, HFP 1.8 ; Bluetooth frequency 2400 MHz - 2483.5 MHz ;', 'accessoris', '2023-11-15 Headset.jpg'),
+(9, 'JBL Quantum 910X Wireless for Xbox', 10, '100', 'Bluetooth version 5.2 ; Bluetooth profiles A2DP 1.3, HFP 1.8 ; Bluetooth frequency 2400 MHz - 2483.5 MHz ;', 'accessoris', '2023-11-15 JBL Quantum 910X Wireless for Xbox.jpg'),
+(10, 'Xbox Super ', 120, '120', 'Keren Bang', 'console', '2023-11-16 Xbox Super .jpg');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `akun`
+-- Indeks untuk tabel `akun`
 --
 ALTER TABLE `akun`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- Indexes for table `keranjang`
+-- Indeks untuk tabel `keranjang`
 --
 ALTER TABLE `keranjang`
   ADD PRIMARY KEY (`id_keranjang`);
 
 --
--- Indexes for table `xbox`
+-- Indeks untuk tabel `xbox`
 --
 ALTER TABLE `xbox`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `akun`
+-- AUTO_INCREMENT untuk tabel `akun`
 --
 ALTER TABLE `akun`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `keranjang`
+-- AUTO_INCREMENT untuk tabel `keranjang`
 --
 ALTER TABLE `keranjang`
-  MODIFY `id_keranjang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_keranjang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `xbox`
+-- AUTO_INCREMENT untuk tabel `xbox`
 --
 ALTER TABLE `xbox`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
