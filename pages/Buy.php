@@ -145,7 +145,7 @@ $xbox_detail = mysqli_fetch_assoc($result);
         <div class="details">
             <p> $<?php echo $xbox_detail['harga']; ?></p>
             <p> Stok: <?php echo $xbox_detail['stok']; ?></p>
-            <p>Spesifikasi: <?php echo $xbox_detail['spesifikasi']; ?></p>  
+            <p>Spesifikasi: <?php echo $xbox_detail['spesifikasi']; ?></p>
         </div>
 
     </div>
@@ -161,7 +161,18 @@ $xbox_detail = mysqli_fetch_assoc($result);
     <?php if (!isset($_SESSION['submit'])) {
       echo "alert('Anda Harus Login Terlebih Dahulu')";
     } else {
-      $query = "INSERT INTO keranjang VALUES ('', '$username', '$xbox_id')";
+      $usernameAkun = $_SESSION['username'];
+      $query2 = "SELECT * FROM keranjang WHERE username = '$usernameAkun'";
+      $result2 = mysqli_query($conn, $query2);
+      $cartfetched = mysqli_fetch_assoc($result2);
+
+      $jumlah = (int)$cartfetched['jumlah'];
+      if ($jumlah == 1) {
+        $jumlah += 1;
+        $query = "UPDATE keranjang SET jumlah = $jumlah WHERE id_item = $xbox_id";
+      } else {
+        $query = "INSERT INTO keranjang VALUES ('', '$username', '$xbox_id', 1)";
+      }
       mysqli_query($conn, $query);
       echo "alert('Xbox Berhasil Ditambahkan Ke Keranjang')";
     } ?>

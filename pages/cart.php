@@ -3,7 +3,8 @@
   session_start();
   $username = $_SESSION['username'];
 
-  $query = "SELECT * FROM xbox WHERE id IN (SELECT id_item FROM keranjang WHERE username = '$username')";
+  $query = "SELECT * FROM xbox x JOIN keranjang k ON x.id = k.id_item WHERE k.username = '$username'";
+
   $result = mysqli_query($conn, $query);
 
   $carts = [];
@@ -11,21 +12,24 @@
     $carts[] = $cart;
   }
 
+$quantity = (int)$carts[0]['jumlah'];
 $sum = 0;
 $total_price_cart = 0;
 $total_item_cart = 0;
 foreach ($carts as $cart) {
-$total_price_cart += $cart['harga'] * $cart['stok'];
+$total_price_cart += ((int)$cart['harga'] * $cart['jumlah']);
 $total_item_cart++;
 }
 
   if (isset($_POST['btnCheckout'])) {
     $totalPrice = $_POST['totalPrice'];
-    $query = "INSERT INTO transaction (username, total_price) VALUES ('$username', $totalPrice)";
-    mysqli_query($conn, $query);
+    $tanggalPembelian = date("Y-m-d H:i:s");
+    $queryHistory = "INSERT INTO transaction (username, total_price) VALUES ('$username', '$tanggalPembelian','$totalPrice')";
+    mysqli_query($conn, $queryHistory);
 
     $query = "DELETE FROM keranjang WHERE username = '$username'";
     mysqli_query($conn, $query);
+    
 
     header("Location: ../index.php");
     exit;
@@ -46,6 +50,7 @@ $total_item_cart++;
 <div class="container">
     <main>
       <h1>Cart</h1>
+      <!-- <h1>Cart</h1> -->
       <div class="basket">
         <div class="basket-labels">
           <ul>
@@ -73,7 +78,7 @@ $total_item_cart++;
             <div class="quantity">
               <form action="update_quantity.php" method="post" class="quantity-form">
                 <input type="hidden" name="id" value="<?=$cart['id'] ?>">
-                <input type="number" name="quantity" value="<?= abs($cart['stok']) ?>" min="1" class="quantity-field">
+                <input type="number" name="quantity" value="<?php echo $quantity?>" min="1" class="quantity-field">
               </form>
             </div>
             <div class="subtotal"><?= $total_price_cart ?></div>
@@ -86,7 +91,7 @@ $total_item_cart++;
           </div>
         <?php endforeach ?>
       </div>
-
+      
       <form action="" method="post">
         <aside>
           <div class="summary">

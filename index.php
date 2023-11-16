@@ -234,7 +234,7 @@ if (isset($_SESSION['username'])) {
                   <div class="call-to-action">
                     <div class="call-to-action-highlight">
                       <p class="call-to-action-text underline-hidden">
-                        LEARN MORE
+                         LEARN MORE
                       </p>
                       <img src="./assets/images/additional/more-white-1.png" alt="See more" class="call-to-action-arrow" />
                     </div>
