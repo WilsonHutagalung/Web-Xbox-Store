@@ -284,19 +284,19 @@ body{
 }
 
 .Cart p a {
-    width: fit-content; /* Menyesuaikan lebar dengan kontennya */
+    width: fit-content;
 	height: 50px;
-    padding: 0px 11px; /* Menambahkan padding agar terlihat lebih seperti tombol */
+    padding: 0px 11px; 
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-right: 290px; /* Menambahkan margin kanan untuk memberi ruang */
-    margin-top: -50px; /* Atur margin-top negatif agar Cart naik sedikit */
-    background-color: green; /* Warna latar belakang */
-    color: #fff; /* Warna teks */
-    border: none; /* Menghilangkan border */
-    cursor: pointer; /* Menunjukkan bahwa ini adalah elemen yang bisa diklik */
-    border-radius: 5px; /* Menambahkan sudut melengkung pada tombol */
+    margin-right: 290px;
+    margin-top: -50px; 
+    background-color: green;
+    color: #fff; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px; 
 	text-decoration: none;
 }
 
@@ -304,12 +304,12 @@ body{
 .name h2{
 	font-family: "Inter", sans-serif;
 	font-size: 26px;
-	margin-bottom: 10px; /* Sesuaikan dengan tinggi jarak yang diinginkan */
+	margin-bottom: 10px;
 } 
 
 .details p{
 	font-size: 16px;
-	margin-bottom: 10px; /* Sesuaikan dengan tinggi jarak yang diinginkan */
+	margin-bottom: 10px;
 
 }
 

@@ -45,17 +45,14 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <p class="underline-hidden" class="dropdown-text">
                 <a href="../index.php">Home</a>
                 </p>
-                <img src="../assets/images/header/more.png" />
               </div>
               <div class="dropdown" id="devices">
                 <p class="underline-hidden" class="dropdown-text"><a href="#Contact">Riwayat</a></p>
-                <img src="../assets/images/header/more.png" />
               </div>
               <div class="dropdown" id="xbox-support">
                 <p class="underline-hidden" class="dropdown-text">
                 <a href="">About Us</a>
                 </p>
-                <img src="../assets/images/header/more.png" />
               </div>
             </div>
           </div>
