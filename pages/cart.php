@@ -84,7 +84,7 @@ $total_item_cart++;
             <div class="subtotal"><?= $total_price_cart ?></div>
             <input type="hidden" name="id" value="<?= $cart['id'] ?>">
             <div class="remove">
-              <a href="delete.php?id=<?= $cart["id"] ?>" onclick="return confirm('Apakah anda ingin menghapus barang ini dari keranjang?')">
+              <a href="Delete_items.php?id=<?= $cart["id"] ?>" onclick="return confirm('Apakah anda ingin menghapus barang ini dari keranjang?')">
                 <button>Remove</button>
               </a>
             </div>

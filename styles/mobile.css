@@ -9,6 +9,7 @@
 
   .header-mobile .logo {
     margin: auto;
+    object-fit: cover;
   }
 
   .nav *,
@@ -17,15 +18,15 @@
   }
 
   #slide-1 .img-wrapper {
-    background-image: url(../images/slider/mobile/slider-image-1.jpg) !important;
+    background-image: url(../assets/images/slider/mobile/slider-image-1.jpg) !important;
   }
 
   #slide-2 .img-wrapper {
-    background-image: url(../images/slider/mobile/slider-image-2.jpg) !important;
+    background-image: url(../assets/images/slider/mobile/slider-image-2.jpg) !important;
   }
 
   #slide-3 .img-wrapper {
-    background-image: url(../images/slider/mobile/slider-image-3.jpg) !important;
+    background-image: url(../assets/images/slider/mobile/slider-image-3.jpg) !important;
   }
 
   .slider,
@@ -116,28 +117,6 @@
   img,
   .img-wrapper {
     max-width: 100%;
-  }
-
-  .item-2 .img-wrapper {
-    background-image: url(../images/main/main-content/mobile/main-content-2.jpg) !important;
-  }
-
-  .item-10 {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .item-10 .img-wrapper {
-    background-image: url(../images/main/main-content/mobile/main-content-10.jpg) !important;
-  }
-
-  .item-10 .info-right {
-    position: relative;
-    background-color: white;
-    margin: 0;
-    width: 100%;
-    height: 30%;
-    bottom: 0;
   }
 
   footer .center {
