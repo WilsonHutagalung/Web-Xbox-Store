@@ -5,25 +5,23 @@ Manual Book ini dibuat untuk memudahkan pengguna dalam menggunakan website XBox 
 - [User](#user)
 
 ## Dibuat oleh:
-<div>
-    <ul style="list-style: none; display: flex; justify-content: center; align-self: center;">
-        <li style="margin: 0px 20px; text-align: center; display: flex; flex-direction: column">
-            <img src="https://avatars.githubusercontent.com/u/113565439?v=4" style="width: 75px; display: flex; align-self: center;"></img>
-            <a href='https://github.com/MaulanaASetiawan'>Maulana Agus Setiawan</a>
-        </li>
-        <li style="margin: 0px 20px; text-align: center; display: flex; flex-direction: column">
-            <img src="https://avatars.githubusercontent.com/u/110729448?v=4" style="width: 75px; display: flex; align-self: center;"></img>
-            <a href='https://github.com/WilsonHutagalung'>Wilson Boyaron Hutagalung</a>
-        </li>
-        <li style="margin: 0px 20px; text-align: center; display: flex; flex-direction: column">
-            <img src="https://avatars.githubusercontent.com/u/53697916?v=4" style="width: 75px; display: flex; align-self: center;"></img>
-            <a href='https://github.com/nabilsaragih'>Muhammad Nabil Saragih</a>
-        </li>
-    </ul>
+<div style="display: flex; justify-content: center; align-items: center; align-self: center;">
+    <div style="display: flex; flex-direction: column; text-align: center">
+        <img src="https://avatars.githubusercontent.com/u/113565439?v=4" style="width: 75px; display: flex; align-self: center;"></img>
+        <a href='https://github.com/MaulanaASetiawan' style="padding: 0px 10px">Maulana Agus Setiawan</a>
+    </div>
+    <div style="display: flex; flex-direction: column; text-align: center">
+        <img src="https://avatars.githubusercontent.com/u/110729448?v=4" style="width: 75px; display: flex; align-self: center;"></img>
+        <a href='https://github.com/WilsonHutagalung' style="padding: 0px 10px">Wilson Boyaron Hutagalung</a>
+    </div>
+    <div style="display: flex; flex-direction: column; text-align: center">
+        <img src="https://avatars.githubusercontent.com/u/53697916?v=4" style="width: 75px; display: flex; align-self: center;"></img>
+        <a href='https://github.com/nabilsaragih' style="padding: 0px 10px">Muhammad Nabil Saragih</a>
+    </div>
 </div>
 
 ## User
-User pada website ini terbagi menjadi 3, yaitu:
+Pada website ini user terbagi menjadi 3 dan memiliki fungsinya masing-masing, yaitu:
 | User Terdaftar | Admin | Guest |
 | :----:        |    :----:   |         :----: |
 | User terdaftar dapat melakukan login dan logout. | Admin dapat melakukan login dan logout. | Guest dapat melihat barang yang dijual. |
