@@ -2,7 +2,13 @@
 require 'koneksi.php';
 session_start();
 $xbox_id = $_GET['id'];
-$username = $_SESSION['username'];
+if(isset($_SESSION['submit'])){
+    $username = $_SESSION['username'];
+}else{
+  echo "<script> alert('Anda Harus Login Terlebih Dahulu')
+  document.location.href='Login.php';
+  </script>";
+}
 
 // Lakukan query untuk mengambil detail Xbox dengan ID yang sesuai
 $query = "SELECT * FROM xbox WHERE id = $xbox_id";

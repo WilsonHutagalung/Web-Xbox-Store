@@ -27,6 +27,7 @@ if (isset($_SESSION['username'])) {
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="stylesheet" href="./styles/mobile.css" />
   <link rel="stylesheet" href="./styles/desktop-half.css" />
+  <link rel="stylesheet" href="./styles/hamburger.css">
   <script src="./scripts/index.js"></script>
 </head>
 
@@ -115,7 +116,7 @@ if (isset($_SESSION['username'])) {
               </div>
               <div class="dropdown" id="community">
                 <p class="underline-hidden" class="dropdown-text">
-                <a href="#Contact">Contact</a>
+                  <a href="#Contact">Contact</a>
                 </p>
                 <img src="./assets/images/header/more.png" />
               </div>
@@ -124,11 +125,10 @@ if (isset($_SESSION['username'])) {
                 <img src="./assets/images/header/more.png" />
               </div>
               <div class="dropdown" id="xbox-support">
-                <?php 
-                if(isset($_SESSION['username'])){
+                <?php
+                if (isset($_SESSION['username'])) {
                   echo "<p class='underline-hidden dropdown-text'><a href='pages/Profile.php?id=$user'>$user</a></p>";
-
-                } else{
+                } else {
                   echo "<p class='underline-hidden' class='dropdown-text'>$user</p>";
                 }
                 ?>
@@ -137,66 +137,67 @@ if (isset($_SESSION['username'])) {
           </div>
           <div class="header-misc">
             <div class="nav-icon">
-              <a href=
-                <?php
-                    if ($user === "guest" or $user === "Guest") {
-                      echo "./pages/Login.php";
-                    } else {
-                      echo "./pages/cart.php";
-                    }
-                ?>
-                id="shopping-cart">
+              <a href=<?php
+                      if ($user === "guest" or $user === "Guest") {
+                        echo "./pages/Login.php";
+                      } else {
+                        echo "./pages/cart.php";
+                      }
+                      ?> id="shopping-cart">
                 <img src="./assets/images/header/cart1.png" />
               </a>
             </div>
             <div class="nav-icon" id="account">
-                <?php
-                if (isset($_SESSION['submit'])) {
-                  echo "<li><a href='pages/Logout.php'><button type='button'>Logout</button></a></li>";
-                } else {
-                  echo "<li><a href='pages/Login.php'><button type='button'>Login</button></a></li>";
-                }
-                ?>
+              <?php
+              if (isset($_SESSION['submit'])) {
+                echo "<li><a href='pages/Logout.php'><button type='button'>Logout</button></a></li>";
+              } else {
+                echo "<li><a href='pages/Login.php'><button type='button'>Login</button></a></li>";
+              }
+              ?>
             </div>
           </div>
         </div>
       </div>
       <div class="header-mobile">
         <div class="flex-row">
-          <div class="nav">
-            <div class="nav-icon">
-              <img src="./assets/images/header/stack-1.png" />
-            </div>
-            <div class="nav-icon">
-              <img src="./assets/images/header/search1.png" />
-            </div>
+          <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+              <span></span>
+            </label>
+            <ul class="menu__box">
+              <li><a class="menu__item" href="./pages/AboutUs.php">About Us</a></li>
+              <li><a class="menu__item" href="#Console">Xbox Console</a></li>
+              <li><a class="menu__item" href="#Contact">Contact</a></li>
+              <li><a class="menu__item" href="#Acc">Accessories</a></li>
+            </ul>
           </div>
-          <div class="logo">
-            <img src="./assets/images/header/microsoft-logo.png" />
-          </div>
+          <div class="header-tabs">
+            <p class="logo-break">&emsp;&emsp;&emsp;</p>
+            <div class="logo">
+              <img src="./assets/images/header/xbox-logo.png" alt="Xbox Logo" />
+            </div>
           <div class="account">
             <div class="nav-icon">
-              <a href=
-                <?php
-                  if ($user === "guest" or $user === "Guest") {
-                    echo "<script>alert('Mohon login terlebih dahulu');</script>";
-                    echo "./pages/Login.php";
-                  } else {
-                    echo "./pages/cart.php";
-                  }
-                ?>
-                id="shopping-cart">
+              <a href=<?php
+                      if ($user === "guest" or $user === "Guest") {
+                        echo "./pages/Login.php";
+                      } else {
+                        echo "./pages/cart.php";
+                      }
+                      ?> id="shopping-cart">
                 <img src="./assets/images/header/cart1.png" />
               </a>
             </div>
             <div class="nav-icon" id="account">
-                <?php
-                if (isset($_SESSION['submit'])) {
-                  echo "<li><a href='pages/Logout.php'><button type='button'>Logout</button></a></li>";
-                } else {
-                  echo "<li><a href='pages/Login.php'><button type='button'>Login</button></a></li>";
-                }
-                ?>
+              <?php
+              if (isset($_SESSION['submit'])) {
+                echo "<li><a href='pages/Logout.php'><button type='button'>Logout</button></a></li>";
+              } else {
+                echo "<li><a href='pages/Login.php'><button type='button'>Login</button></a></li>";
+              }
+              ?>
             </div>
           </div>
         </div>
@@ -215,9 +216,10 @@ if (isset($_SESSION['username'])) {
                   <p class="info-text">Pilots wanted</p>
                   <div class="call-to-action">
                     <div class="call-to-action-highlight">
+                      <a href="" style="text-decoration: none; color:white;">
                       <p class="call-to-action-text underline-hidden">
                         BUY NOW
-                      </p>
+                      </p></a>
                       <img src="./assets/images/additional/more-white-1.png" alt="See more" class="call-to-action-arrow" />
                     </div>
                   </div>
@@ -233,9 +235,10 @@ if (isset($_SESSION['username'])) {
                   <p class="info-text">Power your dreams</p>
                   <div class="call-to-action">
                     <div class="call-to-action-highlight">
+                      <a href="" style="text-decoration: none; color:white;">
                       <p class="call-to-action-text underline-hidden">
                         LEARN MORE
-                      </p>
+                      </p></a>
                       <img src="./assets/images/additional/more-white-1.png" alt="See more" class="call-to-action-arrow" />
                     </div>
                   </div>
@@ -248,9 +251,10 @@ if (isset($_SESSION['username'])) {
               <div class="info" style="color: white">
                 <div class="container">
                   <p class="info-heading">No Man's Sky</p>
+                  <a href="" style="text-decoration:none; color:white;">
                   <p class="info-text">
                     Play it on console or PC with Xbox<br />Game Pass Ultimate
-                  </p>
+                  </p></a>
                   <div class="call-to-action">
                     <div class="call-to-action-highlight">
                       <p class="call-to-action-text underline-hidden">
@@ -285,38 +289,38 @@ if (isset($_SESSION['username'])) {
         <?php
         $i = 1;
         foreach ($xbox as $console) :
-        if ($console['role'] == "console") :
+          if ($console['role'] == "console") :
         ?>
-          <div class="images">
-            <img class="gambar" src="./assets/images/img/<?php echo $console['gambar']; ?> " alt="Foto Profil">
-            <h3><?php echo $console["nama"] ?></h3>
-            <p>$<?php echo $console["harga"] ?></p>
-            <h4 class="btn"><a href="./pages/Buy.php?id=<?php echo $console['id']; ?>">BUY NOW</h4>
-            <h4 class="btn"><a href="./pages/XboxInfo.php?id=<?php echo $console['id']; ?>">LEARN MORE</a></h4>
-          </div>
+            <div class="images">
+              <img class="gambar" src="./assets/images/img/<?php echo $console['gambar']; ?> " alt="Foto Profil">
+              <h3><?php echo $console["nama"] ?></h3>
+              <p>$<?php echo $console["harga"] ?></p>
+              <h4 class="btn"><a href="./pages/Buy.php?id=<?php echo $console['id']; ?>">BUY NOW</h4>
+              <h4 class="btn"><a href="./pages/XboxInfo.php?id=<?php echo $console['id']; ?>">LEARN MORE</a></h4>
+            </div>
         <?php $i++;
-        endif;
+          endif;
         endforeach;
         ?>
       </div>
       <section class="product-us-title" id="Acc">
-            <h1 class="ptitle">Gear up with Xbox accessories</h1>
+        <h1 class="ptitle">Gear up with Xbox accessories</h1>
       </section>
       <div class="image">
         <?php
         $i = 1;
         foreach ($xbox as $console) :
-        if ($console['role'] == "accessoris") :
+          if ($console['role'] == "accessoris") :
         ?>
-          <div class="images">
-            <img class="gambar" src="./assets/images/img/<?php echo $console['gambar']; ?> " alt="Foto Profil">
-            <h3><?php echo $console["nama"] ?></h3>
-            <p>$<?php echo $console["harga"] ?></p>
-            <h4 class="btn"><a href="./pages/Buy.php?id=<?php echo $console['id']; ?>">BUY NOW </ow</h4>
-            <h4 class="btn"><a href="./pages/XboxInfo.php?id=<?php echo $console['id']; ?>">LEARN MORE</a></h4>
-          </div>
+            <div class="images">
+              <img class="gambar" src="./assets/images/img/<?php echo $console['gambar']; ?> " alt="Foto Profil">
+              <h3><?php echo $console["nama"] ?></h3>
+              <p>$<?php echo $console["harga"] ?></p>
+              <h4 class="btn"><a href="./pages/Buy.php?id=<?php echo $console['id']; ?>">BUY NOW </ow< /h4>
+                  <h4 class="btn"><a href="./pages/XboxInfo.php?id=<?php echo $console['id']; ?>">LEARN MORE</a></h4>
+            </div>
         <?php $i++;
-        endif;
+          endif;
         endforeach;
         ?>
       </div>
