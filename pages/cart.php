@@ -24,7 +24,7 @@ $total_item_cart++;
   if (isset($_POST['btnCheckout'])) {
     $totalPrice = $_POST['totalPrice'];
     $tanggalPembelian = date("Y-m-d H:i:s");
-    $queryHistory = "INSERT INTO transaction (username, total_price) VALUES ('$username', '$tanggalPembelian','$totalPrice')";
+    $queryHistory = "INSERT INTO transaction VALUES ('','$username', '$tanggalPembelian','$total_price_cart')";
     mysqli_query($conn, $queryHistory);
 
     $query = "DELETE FROM keranjang WHERE username = '$username'";
@@ -113,6 +113,5 @@ $total_item_cart++;
       </form>
     </main>
   </div>
-  <script src="../scripts/paymentcart.js"></script>
 </body>
 </html>

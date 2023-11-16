@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Nov 2023 pada 14.28
+-- Waktu pembuatan: 16 Nov 2023 pada 16.40
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -41,7 +41,7 @@ INSERT INTO `akun` (`id_user`, `username`, `password`) VALUES
 (1, 'Wilson', '$2y$10$Ex23lNeiKO8AO84G.Dzs9ucOzWPHT4PKeJsjj1lZnpvnZFk5b0nES'),
 (2, 'Agus', '$2y$10$gUFyxDDGRtVOrWuS7cA6sOmjJr5rSBg.OZHz46rAAXgCaxmMq/5nC'),
 (3, 'Nabil', '$2y$10$wNjT/dDyToz1zI6ZSMdsS.lxURmTh2HpEZD9VeVE4N3Rj9D6GZiGS'),
-(4, 'asd', '$2y$10$PoX7KFD4iz11mzFhc6XelOUTyh3tJnxJ.rVV2A8GWp8E1CV9YEj5C');
+(4, 'qwe', '$2y$10$iWKW4hBp8UJdgWAjIRySFOKypIJrSnBJ4RSQIP0o.6dEHo/9lbosy');
 
 -- --------------------------------------------------------
 
@@ -55,6 +55,26 @@ CREATE TABLE `keranjang` (
   `id_item` int(11) NOT NULL,
   `jumlah` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `transaction`
+--
+
+CREATE TABLE `transaction` (
+  `id_transaksi` int(11) NOT NULL,
+  `username` int(11) NOT NULL,
+  `tanggal` int(11) NOT NULL,
+  `totalprice` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `transaction`
+--
+
+INSERT INTO `transaction` (`id_transaksi`, `username`, `tanggal`, `totalprice`) VALUES
+(5, 0, 2023, 489);
 
 -- --------------------------------------------------------
 
@@ -98,6 +118,12 @@ ALTER TABLE `keranjang`
   ADD PRIMARY KEY (`id_keranjang`);
 
 --
+-- Indeks untuk tabel `transaction`
+--
+ALTER TABLE `transaction`
+  ADD PRIMARY KEY (`id_transaksi`);
+
+--
 -- Indeks untuk tabel `xbox`
 --
 ALTER TABLE `xbox`
@@ -117,7 +143,13 @@ ALTER TABLE `akun`
 -- AUTO_INCREMENT untuk tabel `keranjang`
 --
 ALTER TABLE `keranjang`
-  MODIFY `id_keranjang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_keranjang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT untuk tabel `transaction`
+--
+ALTER TABLE `transaction`
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `xbox`
