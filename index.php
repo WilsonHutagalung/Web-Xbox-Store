@@ -139,7 +139,7 @@ if (isset($_SESSION['username'])) {
             <div class="nav-icon">
               <a href=
                 <?php
-                    if ($user === "guest") {
+                    if ($user === "guest" or $user === "Guest") {
                       echo "./pages/Login.php";
                     } else {
                       echo "./pages/cart.php";
@@ -178,7 +178,7 @@ if (isset($_SESSION['username'])) {
             <div class="nav-icon">
               <a href=
                 <?php
-                  if ($user === "guest") {
+                  if ($user === "guest" or $user === "Guest") {
                     echo "<script>alert('Mohon login terlebih dahulu');</script>";
                     echo "./pages/Login.php";
                   } else {
@@ -393,7 +393,7 @@ if (isset($_SESSION['username'])) {
 <script>
   document.getElementById("shopping-cart").addEventListener("click", function() {
     let user = "<?php echo $user; ?>";
-    if (user === "guest") {
+    if (user === "guest" || user === "Guest") {
       alert('Mohon login terlebih dahulu');
     }
   });
