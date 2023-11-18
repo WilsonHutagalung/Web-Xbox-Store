@@ -2,10 +2,7 @@
 
 <?php
 require 'koneksi.php';
-if(!isset($_SESSION['username'])){
-    header("Location: Login.php");
-    exit;
-}
+
 date_default_timezone_set("Asia/Makassar");
 
 
