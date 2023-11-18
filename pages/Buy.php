@@ -23,6 +23,7 @@ $xbox_detail = mysqli_fetch_assoc($result);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/images/additional/Icon.png">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/mobile.css" />
     <link rel="stylesheet" href="../styles/desktop-half.css" />
@@ -179,8 +180,8 @@ $xbox_detail = mysqli_fetch_assoc($result);
       } else {
         $query = "INSERT INTO keranjang VALUES ('', '$username', '$xbox_id', 1)";
       }
-      mysqli_query($conn, $query);
       echo "alert('Xbox Berhasil Ditambahkan Ke Keranjang')";
+      mysqli_query($conn, $query);
     } ?>
   });
 </script>

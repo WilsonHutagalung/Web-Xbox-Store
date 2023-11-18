@@ -11,27 +11,41 @@
   while ($cart = mysqli_fetch_assoc($result)) {
     $carts[] = $cart;
   }
-
-$quantity = (int)$carts[0]['jumlah'];
-$sum = 0;
-$total_price_cart = 0;
-$total_item_cart = 0;
-foreach ($carts as $cart) {
-$total_price_cart += ((int)$cart['harga'] * $cart['jumlah']);
-$total_item_cart++;
+  $quantity = (int)$carts[0]['jumlah'];
+  if ($quantity === 0) {
+    echo "
+    <script>
+        alert('Silakan tambah Barang ke Keranjang!');
+        document.location.href = '../index.php'
+    </script>";
+    // header("Location: ../index.php");
+    exit();
 }
 
+  $sum = 0;
+  $total_price_cart = 0;
+  $total_item_cart = 0;
+  foreach ($carts as $cart) {
+    $total_price_cart += ((int)$cart['harga'] * $cart['jumlah']);
+    $total_item_cart++;
+    $namabarang = $cart['nama'];
+    $jumlah = $cart['jumlah'];
+  }
+  
+  
   if (isset($_POST['btnCheckout'])) {
     $totalPrice = $_POST['totalPrice'];
     $tanggalPembelian = date("Y-m-d H:i:s");
-    $queryHistory = "INSERT INTO transaction VALUES ('','$username', '$tanggalPembelian','$total_price_cart')";
+    $queryHistory = "INSERT INTO transaction VALUES ('','$username','$namabarang', '$tanggalPembelian','$jumlah','$total_price_cart')";
     mysqli_query($conn, $queryHistory);
 
     $query = "DELETE FROM keranjang WHERE username = '$username'";
     mysqli_query($conn, $query);
-    
-
-    header("Location: ../index.php");
+    echo "
+    <script>
+        alert('Berhasil Checkout');
+        document.location.href = '../index.php'
+    </script>";
     exit;
   }
 ?>
@@ -42,6 +56,7 @@ $total_item_cart++;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/images/additional/Icon.png">
     <link rel="stylesheet" href="../styles/cart.css">
     <title>Payment Cart</title>
 </head>

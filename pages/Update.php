@@ -1,5 +1,10 @@
 <?php
     require "koneksi.php";
+    if(!isset($_SESSION['username'])){
+        header("Location: Login.php");
+        exit;
+    }
+    
     $id = $_GET['id'];
     $get = mysqli_query($conn, "SELECT * FROM xbox WHERE id = $id");
     $console = [];
@@ -47,6 +52,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/images/additional/Icon.png">
     <title>Update Data</title>
     <link rel="stylesheet" href="../styles/Form.css">
 </head>

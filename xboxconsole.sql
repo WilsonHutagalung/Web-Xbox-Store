@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Nov 2023 pada 16.40
+-- Waktu pembuatan: 17 Nov 2023 pada 07.22
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -64,8 +64,10 @@ CREATE TABLE `keranjang` (
 
 CREATE TABLE `transaction` (
   `id_transaksi` int(11) NOT NULL,
-  `username` int(11) NOT NULL,
-  `tanggal` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `namaconsole` varchar(50) NOT NULL,
+  `tanggal` date NOT NULL,
+  `jumlah` int(50) NOT NULL,
   `totalprice` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -73,8 +75,9 @@ CREATE TABLE `transaction` (
 -- Dumping data untuk tabel `transaction`
 --
 
-INSERT INTO `transaction` (`id_transaksi`, `username`, `tanggal`, `totalprice`) VALUES
-(5, 0, 2023, 489);
+INSERT INTO `transaction` (`id_transaksi`, `username`, `namaconsole`, `tanggal`, `jumlah`, `totalprice`) VALUES
+(5, 'Nabil', 'Headset', '2023-11-17', 1, 489),
+(6, 'Nabil', 'JBL Quantum 910X Wireless for Xbox', '2023-11-17', 1, 100);
 
 -- --------------------------------------------------------
 
@@ -143,13 +146,13 @@ ALTER TABLE `akun`
 -- AUTO_INCREMENT untuk tabel `keranjang`
 --
 ALTER TABLE `keranjang`
-  MODIFY `id_keranjang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_keranjang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT untuk tabel `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `xbox`

@@ -1,6 +1,13 @@
 <?php
 session_start();
 require "koneksi.php";
+
+
+if(!isset($_SESSION['username'])){
+  header("Location: Login.php");
+  exit;
+}
+
 $result = mysqli_query($conn, "SELECT * FROM xbox");
 date_default_timezone_set("Asia/Makassar");
 $day = date('l');
@@ -24,6 +31,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/images/additional/Icon.png">
     <link rel="stylesheet" href="../styles/Dashboard.css">
     <title>Database</title>
 </head>

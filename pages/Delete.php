@@ -1,5 +1,9 @@
 <?php
     require "koneksi.php";
+    if(!isset($_SESSION['username'])){
+        header("Location: Login.php");
+        exit;
+    }
     $id = $_GET['id'];
     $get = mysqli_query($conn, "DELETE FROM xbox WHERE id = $id");
 

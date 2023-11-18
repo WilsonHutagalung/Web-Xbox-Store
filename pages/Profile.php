@@ -41,6 +41,7 @@ if(isset($_POST['submit'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/images/additional/Icon.png">
     <link rel="stylesheet" href="../styles/profile.css">
     <title>Edit Profile</title>
 </head>

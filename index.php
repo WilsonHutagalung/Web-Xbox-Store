@@ -24,6 +24,7 @@ if (isset($_SESSION['username'])) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Xbox Homepage Clone</title>
+  <link rel="icon" href="./assets/images/additional/Icon.png">
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="stylesheet" href="./styles/mobile.css" />
   <link rel="stylesheet" href="./styles/desktop-half.css" />
